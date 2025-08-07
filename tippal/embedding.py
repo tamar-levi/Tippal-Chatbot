@@ -20,6 +20,8 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 # embedding_sentences(text_chunks)
 
 
+
+
 def embedding_sentences(text_chunks):
     """
     Add new text chunks to the existing metadata and update the FAISS index.
