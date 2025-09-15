@@ -32,7 +32,6 @@ def insert_to_index(data):
             }
         )
 
-        # בדיקה אם הסטטוס קוד אינו 200
         if response.status_code == 200:
             tips_list = response.json()["response"]
             print("Response from Ollama:", tips_list)
@@ -42,12 +41,10 @@ def insert_to_index(data):
             embedding_sentences(text_chunks)
             return True
         else:
-            # הדפסת סטטוס קוד ותוכן ה-response במקרה של שגיאה
             print(f"Error: Received status code {response.status_code}")
             print(f"Response content: {response.text}")
             return False
     except Exception as e:
-        # טיפול בשגיאות בלתי צפויות
         print(f"An unexpected error occurred: {str(e)}")
         return False
 
